@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jomari Lomtong — Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Jomari Lomtong, a full-stack developer building fast, accessible, and thoughtful web experiences." />
+  <meta name="theme-color" content="#070a12" />
+  <meta property="og:title" content="Jomari Lomtong — Full-Stack Developer" />
+  <meta property="og:description" content="I build fast, accessible, and thoughtful web experiences." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("jl-theme");
+        var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Icon sprite -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-github" viewBox="0 0 24 24">
+      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24">
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21h-4V9Z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="m3 7 9 6 9-6"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M7 17 17 7M8 7h9v9"/>
+    </symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24">
+      <path d="M12 5v14M6 13l6 6 6-6"/>
+    </symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24">
+      <path d="M12 19V5M6 11l6-6 6 6"/>
+    </symbol>
+    <symbol id="i-code" viewBox="0 0 24 24">
+      <path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 5l-2 14"/>
+    </symbol>
+    <symbol id="i-server" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="7" rx="2"/>
+      <rect x="3" y="13" width="18" height="7" rx="2"/>
+      <path d="M7 7.5h.01M7 16.5h.01"/>
+    </symbol>
+    <symbol id="i-database" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="8" ry="3"/>
+      <path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/>
+    </symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24">
+      <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.1 2.1-3-3 2.1-2.1Z"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/>
+      <circle cx="12" cy="10" r="2.5"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M12 7v5l3 2"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 12 4 4L19 6"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+    </symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24">
+      <rect x="9" y="9" width="12" height="12" rx="2"/>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+    </symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24">
+      <path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"/>
+      <path d="M19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9L19 16Z"/>
+    </symbol>
+  </svg>
+
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora-blob aurora-a"></span>
+    <span class="aurora-blob aurora-b"></span>
+    <span class="aurora-blob aurora-c"></span>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Jomari Lomtong — home">
+        <span class="brand-mark" aria-hidden="true">JL</span>
+        <span class="brand-name">Jomari<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm nav-cta" href="#contact">Let's talk</a>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+          <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="status-dot" aria-hidden="true"></span> Available for freelance &amp; full-time</p>
+          <h1 class="reveal" style="--i:1">Hi, I'm <span class="gradient-text">Jomari Lomtong</span></h1>
+          <p class="hero-role reveal" style="--i:2">I build <span class="role" id="roleRotator">scalable web apps</span></p>
+          <p class="lead reveal" style="--i:3">
+            A full-stack developer from Tacloban City, Philippines who turns ideas into fast, accessible,
+            and thoughtfully designed products — from the first wireframe to the final deploy.
+          </p>
+          <div class="hero-cta reveal" style="--i:4">
+            <a class="btn btn-primary" href="#projects">
+              View my work
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+          <div class="hero-social reveal" style="--i:5">
+            <span class="hero-social-label">Find me on</span>
+            <a class="social-link" href="https://github.com/jemerenglomtong2001-boop" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg class="icon icon-fill" aria-hidden="true"><use href="#i-github"/></svg>
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/jomarilomtong" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg class="icon icon-fill" aria-hidden="true"><use href="#i-linkedin"/></svg>
+            </a>
+            <a class="social-link" href="mailto:jomarilomtong2001@gmail.com" aria-label="Email">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" style="--i:2">
+          <div class="portrait-card" id="portraitCard">
+            <div class="portrait-inner">
+              <img
+                class="portrait-photo"
+                src="assets/profile.jpg"
+                alt="Jomari Lomtong smiling"
+                width="746"
+                height="737"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <div class="portrait-caption">
+                <p class="portrait-role">Full-Stack Developer</p>
+                <p class="portrait-location">Tacloban City · GMT+8</p>
+              </div>
+            </div>
+
+            <div class="float-chip chip-a" aria-hidden="true">
+              <span class="chip-icon">&lt;/&gt;</span>
+              <div><strong>Clean code</strong><span>built to last</span></div>
+            </div>
+            <div class="float-chip chip-b" aria-hidden="true">
+              <span class="chip-icon">✦</span>
+              <div><strong>20+ projects</strong><span>shipped &amp; counting</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="marquee reveal" aria-label="Technologies I work with">
+          <div class="marquee-track">
+            <span>HTML</span><span class="sep">◆</span>
+            <span>CSS</span><span class="sep">◆</span>
+            <span>JavaScript</span><span class="sep">◆</span>
+            <span>TypeScript</span><span class="sep">◆</span>
+            <span>React</span><span class="sep">◆</span>
+            <span>Next.js</span><span class="sep">◆</span>
+            <span>Node.js</span><span class="sep">◆</span>
+            <span>Laravel</span><span class="sep">◆</span>
+            <span>MySQL</span><span class="sep">◆</span>
+            <span>PostgreSQL</span><span class="sep">◆</span>
+            <span>Tailwind</span><span class="sep">◆</span>
+            <span>Figma</span><span class="sep">◆</span>
+            <span aria-hidden="true">HTML</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">CSS</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">JavaScript</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">TypeScript</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">React</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">Next.js</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">Node.js</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">Laravel</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">MySQL</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">PostgreSQL</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">Tailwind</span><span class="sep" aria-hidden="true">◆</span>
+            <span aria-hidden="true">Figma</span><span class="sep" aria-hidden="true">◆</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow"><span aria-hidden="true"></span> About me</p>
+          <h2>Turning ideas into products people enjoy using.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I'm Jomari, a full-stack developer based in Tacloban City, Philippines. I help startups and
+              small businesses ship reliable web applications — handling everything from database
+              design and API development to polished, responsive interfaces.
+            </p>
+            <p>
+              I care about clean code, thoughtful design, and the small details that make software
+              feel effortless. When I'm not building, you'll find me exploring new tools,
+              contributing to side projects, or helping other developers level up.
+            </p>
+
+            <div class="stats" aria-label="Career highlights">
+              <div class="stat">
+                <span class="stat-number gradient-text">3+</span>
+                <span class="stat-label">Years of experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number gradient-text">20+</span>
+                <span class="stat-label">Projects shipped</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number gradient-text">15+</span>
+                <span class="stat-label">Happy clients</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="facts-card reveal" style="--i:1" aria-label="Quick facts">
+            <h3>Quick facts</h3>
+            <ul class="facts">
+              <li>
+                <span class="fact-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                <div><span>Based in</span><strong>Tacloban City, Philippines</strong></div>
+              </li>
+              <li>
+                <span class="fact-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+                <div><span>Focus</span><strong>Full-stack web development</strong></div>
+              </li>
+              <li>
+                <span class="fact-icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+                <div><span>Currently</span><strong>Open to new opportunities</strong></div>
+              </li>
+              <li>
+                <span class="fact-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                <div><span>Languages</span><strong>English · Filipino</strong></div>
+              </li>
+            </ul>
+            <a class="btn btn-ghost btn-block" href="#contact">
+              Let's work together
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow"><span aria-hidden="true"></span> Skills</p>
+          <h2>Tools I use to bring ideas to life.</h2>
+          <p class="section-lead">A practical toolkit built through real projects — not just tutorials.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+            <h3>Frontend</h3>
+            <p>Responsive, accessible interfaces with a focus on performance and detail.</p>
+            <ul class="tags">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>TypeScript</li>
+              <li>React</li><li>Next.js</li><li>Tailwind CSS</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal" style="--i:1">
+            <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg></span>
+            <h3>Backend</h3>
+            <p>Maintainable APIs, authentication, and business logic that scale.</p>
+            <ul class="tags">
+              <li>Node.js</li><li>Express</li><li>PHP</li><li>Laravel</li>
+              <li>REST APIs</li><li>Auth</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal" style="--i:2">
+            <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg></span>
+            <h3>Databases</h3>
+            <p>Clean data models and queries that keep applications fast and reliable.</p>
+            <ul class="tags">
+              <li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Redis</li><li>Prisma</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal" style="--i:3">
+            <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-tools"/></svg></span>
+            <h3>Tools &amp; Design</h3>
+            <p>From design handoff to deployment and everything in between.</p>
+            <ul class="tags">
+              <li>Git &amp; GitHub</li><li>Docker</li><li>Figma</li>
+              <li>VS Code</li><li>Vercel</li><li>Linux</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head section-head-row reveal">
+          <div>
+            <p class="section-eyebrow"><span aria-hidden="true"></span> Selected work</p>
+            <h2>Projects I'm proud of.</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-stack</button>
+            <button class="filter-btn" type="button" data-filter="frontend" aria-pressed="false">Frontend</button>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal" data-category="fullstack">
+            <div class="project-thumb" style="--thumb-a:#4f6bff;--thumb-b:#8b5cf6" aria-hidden="true">
+              <span class="project-num">01</span>
+              <span class="project-glyph">TF</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <span class="project-type">Full-stack · Featured</span>
+                <div class="project-links">
+                  <a href="#" data-placeholder="Add your live demo link in index.html" aria-label="TaskFlow live demo">
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                  </a>
+                  <a href="#" data-placeholder="Add your repository link in index.html" aria-label="TaskFlow source code">
+                    <svg class="icon icon-fill" aria-hidden="true"><use href="#i-github"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3>TaskFlow</h3>
+              <p>A Kanban workspace with drag-and-drop boards, real-time collaboration, and role-based access.</p>
+              <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--i:1" data-category="frontend">
+            <div class="project-thumb" style="--thumb-a:#0e9384;--thumb-b:#22c55e" aria-hidden="true">
+              <span class="project-num">02</span>
+              <span class="project-glyph">LU</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <span class="project-type">Frontend</span>
+                <div class="project-links">
+                  <a href="#" data-placeholder="Add your live demo link in index.html" aria-label="Luntian live demo">
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                  </a>
+                  <a href="#" data-placeholder="Add your repository link in index.html" aria-label="Luntian source code">
+                    <svg class="icon icon-fill" aria-hidden="true"><use href="#i-github"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3>Luntian</h3>
+              <p>An environmental awareness platform with interactive storytelling and a community clean-up map.</p>
+              <ul class="tags"><li>Next.js</li><li>Tailwind</li><li>Mapbox</li></ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--i:2" data-category="fullstack">
+            <div class="project-thumb" style="--thumb-a:#f59e0b;--thumb-b:#ef4444" aria-hidden="true">
+              <span class="project-num">03</span>
+              <span class="project-glyph">BP</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <span class="project-type">Full-stack</span>
+                <div class="project-links">
+                  <a href="#" data-placeholder="Add your live demo link in index.html" aria-label="BayaniPay live demo">
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                  </a>
+                  <a href="#" data-placeholder="Add your repository link in index.html" aria-label="BayaniPay source code">
+                    <svg class="icon icon-fill" aria-hidden="true"><use href="#i-github"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3>BayaniPay</h3>
+              <p>A fintech dashboard for sending money, tracking transactions, and managing beneficiaries.</p>
+              <ul class="tags"><li>Vue</li><li>Express</li><li>MySQL</li></ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="fullstack">
+            <div class="project-thumb" style="--thumb-a:#8b5cf6;--thumb-b:#ec4899" aria-hidden="true">
+              <span class="project-num">04</span>
+              <span class="project-glyph">SA</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <span class="project-type">Full-stack</span>
+                <div class="project-links">
+                  <a href="#" data-placeholder="Add your live demo link in index.html" aria-label="SmartAttend live demo">
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                  </a>
+                  <a href="#" data-placeholder="Add your repository link in index.html" aria-label="SmartAttend source code">
+                    <svg class="icon icon-fill" aria-hidden="true"><use href="#i-github"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3>SmartAttend</h3>
+              <p>A QR-based attendance system for schools with live reports and admin analytics.</p>
+              <ul class="tags"><li>Laravel</li><li>MySQL</li><li>Alpine.js</li></ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--i:1" data-category="fullstack">
+            <div class="project-thumb" style="--thumb-a:#0ea5e9;--thumb-b:#6366f1" aria-hidden="true">
+              <span class="project-num">05</span>
+              <span class="project-glyph">CB</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <span class="project-type">Full-stack</span>
+                <div class="project-links">
+                  <a href="#" data-placeholder="Add your live demo link in index.html" aria-label="ChatterBox live demo">
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                  </a>
+                  <a href="#" data-placeholder="Add your repository link in index.html" aria-label="ChatterBox source code">
+                    <svg class="icon icon-fill" aria-hidden="true"><use href="#i-github"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3>ChatterBox</h3>
+              <p>A real-time chat app with rooms, typing indicators, and message reactions.</p>
+              <ul class="tags"><li>Socket.IO</li><li>Node.js</li><li>MongoDB</li></ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--i:2" data-category="frontend">
+            <div class="project-thumb" style="--thumb-a:#64748b;--thumb-b:#0ea5e9" aria-hidden="true">
+              <span class="project-num">06</span>
+              <span class="project-glyph">JL</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <span class="project-type">Frontend</span>
+                <div class="project-links">
+                  <a href="#" data-placeholder="Add your live demo link in index.html" aria-label="Portfolio live demo">
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                  </a>
+                  <a href="#" data-placeholder="Add your repository link in index.html" aria-label="Portfolio source code">
+                    <svg class="icon icon-fill" aria-hidden="true"><use href="#i-github"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3>Personal Portfolio</h3>
+              <p>A fast, accessible personal site built with vanilla HTML, CSS, and JavaScript.</p>
+              <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="projects-foot reveal">
+          <a class="btn btn-ghost" href="https://github.com/jemerenglomtong2001-boop" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-fill" aria-hidden="true"><use href="#i-github"/></svg>
+            More on GitHub
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow"><span aria-hidden="true"></span> Experience</p>
+          <h2>Where I've been building.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-meta">
+              <span class="timeline-date">2024 — Present</span>
+              <span class="timeline-badge">Freelance</span>
+            </div>
+            <h3>Full-Stack Developer <span>· Self-employed</span></h3>
+            <p>Designing and shipping end-to-end web applications for startups and small businesses.</p>
+            <ul class="timeline-points">
+              <li>Built and deployed 10+ production projects using React, Node.js, and Laravel.</li>
+              <li>Improved average page load times by 40% through performance audits and refactors.</li>
+              <li>Collaborated directly with clients on scope, design, and delivery timelines.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item reveal" style="--i:1">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-meta">
+              <span class="timeline-date">2023 — 2024</span>
+            </div>
+            <h3>Junior Web Developer <span>· Tech Studio</span></h3>
+            <p>Built and maintained client websites and internal tools as part of a small product team.</p>
+            <ul class="timeline-points">
+              <li>Converted Figma designs into responsive, accessible interfaces.</li>
+              <li>Integrated REST APIs and improved form validation across 5 client projects.</li>
+              <li>Participated in code reviews and introduced reusable component patterns.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item reveal" style="--i:2">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-meta">
+              <span class="timeline-date">2022 — 2023</span>
+            </div>
+            <h3>Software Engineering Intern <span>· Innovate Labs</span></h3>
+            <p>Supported the engineering team with internal tooling and quality assurance.</p>
+            <ul class="timeline-points">
+              <li>Developed reusable UI components and documented their usage.</li>
+              <li>Wrote test cases and helped reduce regression bugs before releases.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div class="contact-copy">
+            <p class="section-eyebrow"><span aria-hidden="true"></span> Contact</p>
+            <h2>Have a project in mind? Let's build it together.</h2>
+            <p>
+              I'm currently open to freelance work and full-time opportunities. Tell me about your
+              idea, your timeline, and what success looks like — I'll get back to you within 24 hours.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:jomarilomtong2001@gmail.com">
+                Email me
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+              <button class="btn btn-ghost" id="copyEmail" type="button" data-email="jomarilomtong2001@gmail.com">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+                Copy email
+              </button>
+            </div>
+          </div>
+
+          <div class="contact-details">
+            <a class="contact-row" href="mailto:jomarilomtong2001@gmail.com">
+              <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+              <div><span>Email</span><strong>jomarilomtong2001@gmail.com</strong></div>
+            </a>
+            <div class="contact-row">
+              <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+              <div><span>Location</span><strong>Tacloban City, Philippines</strong></div>
+            </div>
+            <div class="contact-row">
+              <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+              <div><span>Response time</span><strong>Within 24 hours</strong></div>
+            </div>
+
+            <div class="contact-socials">
+              <a class="social-link" href="https://github.com/jemerenglomtong2001-boop" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg class="icon icon-fill" aria-hidden="true"><use href="#i-github"/></svg>
+              </a>
+              <a class="social-link" href="https://www.linkedin.com/in/jomarilomtong" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg class="icon icon-fill" aria-hidden="true"><use href="#i-linkedin"/></svg>
+              </a>
+              <a class="social-link" href="mailto:jomarilomtong2001@gmail.com" aria-label="Email">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Jomari Lomtong. All rights reserved.</p>
+      <p class="footer-note">Designed &amp; built with <span class="heart" aria-hidden="true">♥</span> in Tacloban City.</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
